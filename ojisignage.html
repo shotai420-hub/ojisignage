@@ -146,7 +146,7 @@
     const thumbsBar = document.getElementById('thumbsBar');
     const slideInfo = document.getElementById('slideInfo');
 
-    let images = []; let current = 0; let autoplay = false; let autointerval = null; const AUTOPLAY_MS = 10000;//ここで表示秒数変更
+    let images = []; let current = 0; let autoplay = false; let autointerval = null; const AUTOPLAY_MS = 50000;//ここで表示秒数変更(通常は3000)
 
     function enableControls(state){ startBtn.disabled=!state; clearBtn.disabled=!state; autoplayToggle.disabled=!state; }
     function handleFiles(fileList){ const files = Array.from(fileList).filter(f=>f.type.startsWith('image/')); if(!files.length) return; files.forEach(f=>{ const url=URL.createObjectURL(f); images.push({file:f,url,name:f.name}); }); renderThumbs(); enableControls(images.length>0);}
